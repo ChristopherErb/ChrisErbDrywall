@@ -1,14 +1,14 @@
+import axios from 'axios'
+import { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+
+
 const Employees = () => {
-
-
-
-
 
     return (
 
         <div>
 
-        <h1>Here's the main</h1>
 
         </div>
     )
