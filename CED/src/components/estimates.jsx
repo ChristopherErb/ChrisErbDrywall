@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-
+import NavBar from './navbar'
 
 const Estimates = () => {
 
@@ -12,8 +12,7 @@ const Estimates = () => {
     return (
 
         <div>
-
-        <h1>Here's the main</h1>
+        <h1>Here's Estimates</h1>
 
         </div>
     )

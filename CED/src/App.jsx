@@ -7,24 +7,11 @@ import NavBar from './components/navbar'
 import Main from './components/main'
 import axios from 'axios'
 import { BASE_URL } from './globals'
+import Employees from './components/employees'
 
 function App() {
 
-  const [stateCheck, setStateCheck] = useState()
 
-  useEffect(() => {
-    const getEmployees = async () => {
-      const response = await axios.get(`${BASE_URL}/employees`)
-      console.log(response)
-      setStateCheck(response.data)
-
-
-
-
-    }
-    getEmployees()
-
-  }, [])
 
   return (
     <div className='App'>
@@ -34,13 +21,8 @@ function App() {
 
 
     </div>
-
-
-
-
-        {/* <Header />
-        <Main />
-        <NavBar /> */}
+      <NavBar /> 
+      <Main />
 
     </div>
   )

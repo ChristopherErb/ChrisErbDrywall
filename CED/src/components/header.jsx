@@ -11,8 +11,11 @@ const Header = () => {
     return (
 
         <div>
-
+        <div>
+            
+        </div>
         <h1>Christopher Erb Drywall</h1>
+        
 
         </div>
     )
