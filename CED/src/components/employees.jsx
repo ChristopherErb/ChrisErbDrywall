@@ -6,32 +6,13 @@ import NavBar from './navbar'
 
 
 
-const Employees = () => {
-
-    const [employeeState, setEmployeeState] = useState([])
-
-    useEffect(() => {
-    const getEmployees = async () => {
-
-        try{
-        const response = await axios.get(`${BASE_URL}/employees`)
-        console.log(response)
-        setEmployeeState(response.data)
-        } catch (error) {
-            console.error('Error with useEffect', error)
-        }
-      }
-      getEmployees()
-  
-    }, [])
- 
-
+const Employees = (props) => {
 
 
     return (
 
         <div>
-            {employeeState.map((employee) => (
+            {props.employees.map((employee) => (
                 <div key={employee.employee_name} className='card'>
                 <h3>{employee.employee_name} : {employee.employee_rank}</h3>
                 <img src={employee.employee_picture} ></img>

@@ -14,8 +14,8 @@ import Projects from './projects'
 
 
 
-const Main = () => {
-
+const Main = (props) => {
+    
 
 
 
@@ -24,11 +24,11 @@ const Main = () => {
         <div>
         <div className='router_container'>
             <Routes>
-                <Route path='/employees' element={<Employees/>} />
-                <Route path='/customers' element={<Customers/>} />
+                <Route path='/employees' element={<Employees employees={props.employees}/>}/>
+                <Route path='/customers' element={<Customers customers={props.customers}/>}/>
                 <Route path='/estimates' element={<Estimates/>}/>
                 <Route path='/invoices' element={<Invoices/>}/>
-                <Route path='/projects' element={<Projects/>}/>
+                <Route path='/projects' element={<Projects projects={props.projects}/>}/>
 
 
             </Routes>

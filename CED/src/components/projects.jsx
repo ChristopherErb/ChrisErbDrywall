@@ -2,7 +2,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import NavBar from './navbar'
-const Projects = () => {
+const Projects = (props) => {
 
 
 
@@ -10,10 +10,12 @@ const Projects = () => {
 
     return (
 
-        <div>
-        <h1>Here's the projects page</h1>
-
-        </div>
+<div>
+        <h1>Here's Projects</h1>
+        {props.projects.map((project) => (
+          <h3 key={project.projectId}>{project.description}</h3>
+        ))}
+      </div>
     )
 
 }
