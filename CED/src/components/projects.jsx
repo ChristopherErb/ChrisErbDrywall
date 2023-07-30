@@ -10,7 +10,7 @@ const Projects = (props) => {
 
     return (
 
-<div>
+    <div>
         <h1>Here's Projects</h1>
         {props.projects.map((project) => (
           <h3 key={project.projectId}>{project.description}</h3>

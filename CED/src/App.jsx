@@ -8,6 +8,8 @@ import Main from './components/main'
 import axios from 'axios'
 import { BASE_URL } from './globals'
 import Employees from './components/employees'
+import 'bootstrap/dist/css/bootstrap.min.css'
+
 
 function App() {
 
@@ -67,7 +69,6 @@ function App() {
 
     
     <div>
-
 
     </div>
       <NavBar /> 

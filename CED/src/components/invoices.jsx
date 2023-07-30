@@ -10,11 +10,7 @@ const Invoices = () => {
 
 
     return (
-
-        <div>
-        <h1>Here's Invoices</h1>
-
-        </div>
+        <></>
     )
 
 }

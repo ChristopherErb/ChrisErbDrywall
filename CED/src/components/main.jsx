@@ -21,8 +21,8 @@ const Main = (props) => {
 
 
     return (
-        <div>
-        <div className='router_container'>
+
+
             <Routes>
                 <Route path='/employees' element={<Employees employees={props.employees}/>}/>
                 <Route path='/customers' element={<Customers customers={props.customers}/>}/>
@@ -33,9 +33,6 @@ const Main = (props) => {
 
             </Routes>
 
-
-        </div>
-        </div>
     )
 
 }

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import NavBar from './navbar'
 
+
 const Customers = (props) => {
 
 
@@ -13,6 +14,7 @@ const Customers = (props) => {
         {props.customers.map((customer) => (
           <h3 key={customer.customerId}>{customer.manager}</h3>
         ))}
+
       </div>
     )
 }
