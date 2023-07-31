@@ -12,7 +12,13 @@ const Customers = (props) => {
         <div>
         <h1>Here's Customers</h1>
         {props.customers.map((customer) => (
-          <h3 key={customer.customerId}>{customer.manager}</h3>
+        <div>
+          <h2 key={customer.customerId}>{customer.business_name}</h2> <br/>
+          <h4>{customer.description}</h4> <br/>
+          <h4>{customer.manager}</h4> <br/>
+          <h4>{customer.address}</h4> <br/>
+          <h4>{customer.price_sqft}</h4> <br/>
+        </div>
         ))}
 
       </div>
