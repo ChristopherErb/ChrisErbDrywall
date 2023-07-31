@@ -25,10 +25,10 @@ const Projects = (props) => {
     <li class="list-group-item">Type of Job: {project.type_of_job}</li>
     <li class="list-group-item">Type of Job: {project.type_of_job}</li>
     <li class="list-group-item"><div className='blurred'>
-          <h7>Estimate</h7><span>${project.estimate}.00</span>
-          <h5>Materials</h5><span>${project.material_cost}.00</span>
-          <h5>Labor</h5><span>${project.labor_cost}.00</span>
-          <h5>Total Cost</h5><span>${project.total_cost}.00</span>
+          <h6>Estimate</h6><span>${project.estimate}</span>
+          <h5>Materials</h5><span>${project.material_cost}</span>
+          <h5>Labor</h5><span>${project.labor_cost}</span>
+          <h5>Total Cost</h5><span>${project.total_cost}</span>
           </div></li>
   </ul>
   <div class="card-body">

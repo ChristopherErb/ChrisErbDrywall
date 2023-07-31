@@ -9,21 +9,43 @@ const Customers = (props) => {
 
 
     return (
-        <div>
-        <h1>Here's Customers</h1>
-        {props.customers.map((customer) => (
-        <div>
-          <h2 key={customer.customerId}>{customer.business_name}</h2> <br/>
-          <h4>{customer.description}</h4> <br/>
-          <h4>{customer.manager}</h4> <br/>
-          <h4>{customer.address}</h4> <br/>
-          <h4>{customer.price_sqft}</h4> <br/>
-        </div>
-        ))}
+<div>
+{props.customers.map((customer) => (
+<div class="card">
 
-      </div>
+ 
+  <img class="card-img-top" src="jpg.jpg" alt="Card image cap"/>
+  <div class="card-body">
+    <h5 class="card-title"key={customer.customerId}>{customer.business_name}</h5>
+    <p class="card-text">{customer.description}</p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Project Manager: {customer.manager}</li>
+    <li class="list-group-item">Customer's Address {customer.address}</li>
+    <li class="list-group-item">Negotiated Price {customer.price_sqft}</li>
+
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+
+  </div>
+
+
+</div>
+))} 
+</div>
+
     )
 }
+
+
+
+
+
+
+
+
 
 
 export default Customers
