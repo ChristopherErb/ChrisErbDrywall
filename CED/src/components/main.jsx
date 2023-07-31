@@ -19,11 +19,12 @@ const Main = (props) => {
 
 
 
-
     return (
 
 
-            <Routes>
+  
+           <Routes>
+                <Route path='/' element={<Header  />}/>
                 <Route path='/employees' element={<Employees employees={props.employees}/>}/>
                 <Route path='/customers' element={<Customers customers={props.customers}/>}/>
                 <Route path='/estimates' element={<Estimates/>}/>
@@ -33,6 +34,7 @@ const Main = (props) => {
 
             </Routes>
 
+     
     )
 
 }

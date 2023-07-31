@@ -66,14 +66,8 @@ function App() {
 
   return (
     <div className='App'>
-
-    
-    <div>
-
-    </div>
       <NavBar /> 
       <Main projects={projects} customers={customers} employees={employees} />
-
     </div>
   )
 }

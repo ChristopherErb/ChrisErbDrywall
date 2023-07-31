@@ -4,6 +4,14 @@ body{
   background-size: cover;
 }
 
+.business-photo img
+{
+display: flex;
+justify-content: center;
+max-width: 500px;
+max-height: 500px;
+}
+
 .bg-yellow
 {
   background: rgba(255, 255, 255, 0.528);
@@ -26,7 +34,7 @@ filter:blur(5px)
   text-align: center;
   justify-content: center;
   background-color: #424242;
-  width: 300px;
+  width: 325px;
 }
 
 .card button {
@@ -47,3 +55,51 @@ filter:blur(5px)
 .content {
   color: #e0e0e0;
 }
+
+
+.header {
+  background-color: rgba(29, 30, 29, 0.5);
+  padding: 20px;
+  text-align: center;
+  color: #fff;
+}
+
+.header h1 {
+  font-size: 48px;
+  margin: 0;
+}
+
+.business-photo{
+  display: column;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.business-photo img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.main-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  line-height: 1.6;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .header h1 {
+    font-size: 36px;
+  }
+
+  .main-content {
+    max-width: 90%;
+  }
+}
+

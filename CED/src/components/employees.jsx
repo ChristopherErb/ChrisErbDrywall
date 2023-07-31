@@ -12,6 +12,9 @@ const Employees = (props) => {
     return (
 
         <div>
+            <header className="header">
+          <h1>Our Hard-Working Employees</h1>
+        </header>
             {props.employees.map((employee) => (
                 <div key={employee.employee_name} className='card'>
                 <h3>{employee.employee_name} : {employee.employee_rank}</h3>

@@ -12,7 +12,9 @@ const Estimates = () => {
     return (
 
         <div>
-        <h1>Here's Estimates</h1>
+        <header className="header">
+          <h1>Need an Estimate?</h1>
+        </header>
 
         </div>
     )
