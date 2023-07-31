@@ -12,7 +12,7 @@ const NavBar = () => {
  <nav className="navbar navbar-expand-lg bg-yellow">
       <div className="container">
         <Link className="navbar-brand" to="/">
-          CED
+          <img src='NoBgLogo.png' />
         </Link>
         <button
           className="navbar-toggler"
@@ -39,6 +39,11 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="nav-item">
+              <Link to="/projects" className="nav-link">
+                Projects
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link to="/customers" className="nav-link">
                 Our Amazing Customers
               </Link>
@@ -49,13 +54,8 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/invoices" className="nav-link">
-                Invoices
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/projects" className="nav-link">
-                Projects
+              <Link to="/contact" className="nav-link">
+                Contact Us!
               </Link>
             </li>
           </ul>

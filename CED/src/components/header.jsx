@@ -13,7 +13,7 @@ const Header = () => {
         <div className="front-page">
 
         <header className="header">
-          <h1>Building Dreams Together, One Wall at a Time</h1>
+          <h1>Building Dreams Together <br/>One Wall at a Time</h1>
         </header>
 
   
