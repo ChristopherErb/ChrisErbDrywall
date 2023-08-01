@@ -33,9 +33,13 @@ const Estimates = () => {
 
   return (
     <div>
-      <h2>Create New Customer</h2>
+            <header className="header">
+        <h1>Need an estimate?</h1>
+      </header>
+      <div className="main-content">
+      <h4>Leave your information below:</h4>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="input-container">
           <label htmlFor="business_name">Business Name:</label>
           <input
             type="text"
@@ -46,7 +50,7 @@ const Estimates = () => {
             required
           />
         </div>
-        <div>
+        <div className="input-container">
           <label htmlFor="manager">Manager:</label>
           <input
             type="text"
@@ -57,8 +61,8 @@ const Estimates = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor="address">Address:</label>
+        <div className="input-container">
+          <label htmlFor="address">Contact Number or Email:</label>
           <input
             type="text"
             id="address"
@@ -68,7 +72,7 @@ const Estimates = () => {
             required
           />
         </div>
-        <div>
+        <div className="input-container">
           <label htmlFor="price_sqft">Price per sqft:</label>
           <input
             type="text"
@@ -79,9 +83,9 @@ const Estimates = () => {
             required
           />
         </div>
-        <div>
+        <div className="input-container">
           <label htmlFor="description">Description:</label>
-          <textarea
+          <input
             id="description"
             name="description"
             value={formState.description}
@@ -89,8 +93,9 @@ const Estimates = () => {
             required
           />
         </div>
-        <button type="submit">Create Customer</button>
+        <button class="btn btn-primary btn-lg btn-block" type="submit">Get a quote!</button>
       </form>
+    </div>
     </div>
   );
 };

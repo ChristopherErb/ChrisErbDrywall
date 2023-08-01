@@ -43,12 +43,9 @@ const Customers = (props) => {
               </li>
             </ul>
             <div className="card-body">
-              <button onClick={() => handleDelete(customer.id)}>
+              <button class="btn btn-primary btn-lg btn-block" onClick={() => handleDelete(customer.id)}>
                 Delete
               </button>
-              <a href="#" className="card-link">
-                Another link
-              </a>
             </div>
           </div>
         ))}

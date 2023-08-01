@@ -35,13 +35,7 @@ const Contact = () => {
             <img src="/icons8-linkedin-480.png" />
           </a>
         </div>
-
-        
      </div>
-
-
-
-
       <h4 className=''>I always love to hear website feedback!  Here you can find Christopher</h4>
         <div className="iconFloat main-content">
         <div className="notAnnoyed">
