@@ -12,7 +12,7 @@ const Customers = (props) => {
 
   useEffect(() => {
     //UPDATE
-    axios.get(`http://localhost:8000/customers/`).then((response) => {
+    axios.get(`https://ced-db-production.up.railway.app/customers/`).then((response) => {
       setCustomers(response.data);
     });
   }, []);
@@ -26,7 +26,7 @@ const Customers = (props) => {
 
   const handleUpdate = () => {
     axios
-      .put(`http://localhost:8000/customers/${EditCustomer.id}`, EditCustomer)
+      .put(`https://ced-db-production.up.railway.app/customers/${EditCustomer.id}`, EditCustomer)
       .then((response) => {
         console.log("Customer updated", response.data);
         setCustomers((prevCustomers) =>
@@ -48,7 +48,7 @@ const Customers = (props) => {
   const handleDelete = (customerId) => {
     console.log(props.customers);
     axios
-      .delete(`http://localhost:8000/customers/${customerId}`)
+      .delete(`https://ced-db-production.up.railway.app/customers/${customerId}`)
       .then((response) => {
         console.log("deleted", response.data);
         window.location.reload();

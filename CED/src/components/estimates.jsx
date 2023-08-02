@@ -21,7 +21,7 @@ const Estimates = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     axios
-      .post('http://localhost:8000/customers/', formState)
+      .post('https://ced-db-production.up.railway.app/customers/', formState)
       .then((response) => {
         console.log("cstmr created", response.data);
         setFormState(initialState)
