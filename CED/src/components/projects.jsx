@@ -8,7 +8,6 @@ const Projects = (props) => {
       <header className="header">
         <h1>Projects in progress</h1>
       </header>
-
       <div className="card-container">
         {props.projects.map((project) => (
           <div className="card">

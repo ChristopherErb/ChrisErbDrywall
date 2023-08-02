@@ -8,8 +8,7 @@ const Customers = (props) => {
   const [customers, setCustomers] = useState([]);
   const [EditCustomer, setEditCustomer] = useState(null);
 
-const refresh = () => window.location.reload(true)
-
+  const refresh = () => window.location.reload(true);
 
   useEffect(() => {
     //UPDATE
