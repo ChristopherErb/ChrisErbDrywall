@@ -21,7 +21,7 @@ const Estimates = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     axios
-      .post('https://ced-db-production.up.railway.app/customers/', formState)
+      .post('https://famous-maamoul-915df2.netlify.app/customers/', formState)
       .then((response) => {
         console.log("cstmr created", response.data);
         setFormState(initialState)

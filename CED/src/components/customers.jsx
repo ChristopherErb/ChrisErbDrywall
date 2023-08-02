@@ -12,7 +12,7 @@ const Customers = (props) => {
 
   useEffect(() => {
     //UPDATE
-    axios.get(`https://ced-db-production.up.railway.app/customers/`).then((response) => {
+    axios.get(`https://famous-maamoul-915df2.netlify.app/customers/`).then((response) => {
       setCustomers(response.data);
     });
   }, []);
@@ -26,7 +26,7 @@ const Customers = (props) => {
 
   const handleUpdate = () => {
     axios
-      .put(`https://ced-db-production.up.railway.app/customers/${EditCustomer.id}`, EditCustomer)
+      .put(`https://famous-maamoul-915df2.netlify.app/customers/${EditCustomer.id}`, EditCustomer)
       .then((response) => {
         console.log("Customer updated", response.data);
         setCustomers((prevCustomers) =>
@@ -48,7 +48,7 @@ const Customers = (props) => {
   const handleDelete = (customerId) => {
     console.log(props.customers);
     axios
-      .delete(`https://ced-db-production.up.railway.app/customers/${customerId}`)
+      .delete(`https://famous-maamoul-915df2.netlify.app/customers/${customerId}`)
       .then((response) => {
         console.log("deleted", response.data);
         window.location.reload();

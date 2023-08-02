@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://ced-db-production.up.railway.app/'
+export const BASE_URL = 'https://famous-maamoul-915df2.netlify.app/'
