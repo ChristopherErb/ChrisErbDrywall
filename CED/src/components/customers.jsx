@@ -5,6 +5,44 @@ import NavBar from "./navbar";
 
 const Customers = (props) => {
   const { customerId } = useParams();
+  const [customers, setCustomers] = useState([]);
+  const [EditCustomer, setEditCustomer] = useState(null);
+
+  useEffect(() => {
+    //UPDATE
+    axios.get(`http://localhost:8000/customers/`).then((response) => {
+      setCustomers(response.data);
+    });
+  }, []);
+
+  const handleEdit = (customer) => {
+    setEditCustomer(customer);
+    setEditManager(customer.manager);
+    setEditAddress(customer.address);
+    setEditPriceSqft(customer.price_sqft);
+  };
+
+  const handleUpdate = () => {
+    axios
+      .put(`http://localhost:8000/customers/${EditCustomer.id}`, EditCustomer)
+      .then((response) => {
+        console.log("Customer updated", response.data);
+        setCustomers((prevCustomers) =>
+          prevCustomers.map((customer) =>
+            customer.id === EditCustomer.id ? EditCustomer : customer
+          )
+        );
+        setEditCustomer(null);
+      })
+      .catch((error) => {
+        console.error("error updating", error);
+        if (error.response) {
+          console.log("Response status:", error.response.status);
+        }
+      });
+  };
+
+  //DELETE
   const handleDelete = (customerId) => {
     console.log(props.customers);
     axios
@@ -16,34 +54,105 @@ const Customers = (props) => {
         console.error("error deleting", error);
       });
   };
+
   return (
     <div>
       <header className="header">
         <h1>Our Loyal Customers</h1>
       </header>
       <div className="card-container">
-        {props.customers.map((customer) => (
+        {customers.map((customer) => (
           <div className="card">
             <img className="card-img-top" src="jpg.jpg" alt="Card image cap" />
             <div className="card-body">
-              <h5 className="card-title" key={customer.customer_Id}>
-                {customer.business_name}
-              </h5>
-              <p className="card-text">{customer.description}</p>
+              {EditCustomer && EditCustomer.id === customer.id ? (
+                <div>
+                  <input
+                    type="text"
+                    value={EditCustomer.business_name}
+                    onChange={(e) =>
+                      setEditCustomer({
+                        ...EditCustomer,
+                        business_name: e.target.value,
+                      })
+                    }
+                  />
+                  <textarea
+                    value={EditCustomer.description}
+                    onChange={(e) =>
+                      setEditCustomer({
+                        ...EditCustomer,
+                        description: e.target.value,
+                      })
+                    }
+                  />
+                  <input
+                    type="text"
+                    value={EditCustomer.manager}
+                    onChange={(e) =>
+                      setEditCustomer({
+                        ...EditCustomer,
+                        manager: e.target.value,
+                      })
+                    }
+                  />
+                  <input
+                    type="text"
+                    value={EditCustomer.address}
+                    onChange={(e) =>
+                      setEditCustomer({
+                        ...EditCustomer,
+                        address: e.target.value,
+                      })
+                    }
+                  />
+                  <input
+                    type="text"
+                    value={EditCustomer.price_sqft}
+                    onChange={(e) =>
+                      setEditCustomer({
+                        ...EditCustomer,
+                        price_sqft: e.target.value,
+                      })
+                    }
+                  />
+                </div>
+              ) : (
+                <>
+                  <h5 className="card-title">{customer.business_name}</h5>
+                  <p className="card-text">{customer.description}</p>
+                  <p className="card-text">
+                    Project Manager: {customer.manager}
+                  </p>
+                  <p className="card-text">
+                    Customer's Address: {customer.address}
+                  </p>
+                  <p className="card-text">
+                    Negotiated Price: {customer.price_sqft}
+                  </p>
+                </>
+              )}
             </div>
-            <ul className="list-group list-group-flush">
-              <li className="list-group-item">
-                Project Manager: {customer.manager}
-              </li>
-              <li className="list-group-item">
-                Customer's Address {customer.address}
-              </li>
-              <li className="list-group-item">
-                Negotiated Price {customer.price_sqft}
-              </li>
-            </ul>
             <div className="card-body">
-              <button class="btn btn-primary btn-lg btn-block" onClick={() => handleDelete(customer.id)}>
+              {EditCustomer && EditCustomer.id === customer.id ? (
+                <button
+                  className="btn btn-primary btn-lg btn-block"
+                  onClick={handleUpdate}
+                >
+                  Update
+                </button>
+              ) : (
+                <button
+                  className="btn btn-primary btn-lg btn-block"
+                  onClick={() => handleEdit(customer)}
+                >
+                  Edit
+                </button>
+              )}
+              <button
+                className="btn btn-danger btn-lg btn-block"
+                onClick={() => handleDelete(customer.id)}
+              >
                 Delete
               </button>
             </div>
