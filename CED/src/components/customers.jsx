@@ -8,6 +8,9 @@ const Customers = (props) => {
   const [customers, setCustomers] = useState([]);
   const [EditCustomer, setEditCustomer] = useState(null);
 
+const refresh = () => window.location.reload(true)
+
+
   useEffect(() => {
     //UPDATE
     axios.get(`http://localhost:8000/customers/`).then((response) => {
@@ -49,6 +52,7 @@ const Customers = (props) => {
       .delete(`http://localhost:8000/customers/${customerId}`)
       .then((response) => {
         console.log("deleted", response.data);
+        window.location.reload();
       })
       .catch((error) => {
         console.error("error deleting", error);
@@ -125,7 +129,7 @@ const Customers = (props) => {
                     Project Manager: {customer.manager}
                   </p>
                   <p className="card-text">
-                    Customer's Address: {customer.address}
+                    Contact Information: {customer.address}
                   </p>
                   <p className="card-text">
                     Negotiated Price: {customer.price_sqft}

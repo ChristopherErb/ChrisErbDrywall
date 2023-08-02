@@ -43,14 +43,6 @@ const Projects = (props) => {
                 </div>
               </li>
             </ul>
-            <div className="card-body">
-              <a href="#" className="card-link">
-                Card link
-              </a>
-              <a href="#" className="card-link">
-                Another link
-              </a>
-            </div>
           </div>
         ))}
       </div>

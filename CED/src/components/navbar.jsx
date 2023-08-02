@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const [isNavCollapsed, setIsNavCollapsed] = useState(true);
-
   const handleNavCollapse = () => {
     setIsNavCollapsed(!isNavCollapsed);
   };
@@ -50,7 +49,7 @@ const NavBar = () => {
             </li>
             <li className="nav-item">
               <Link to="/estimates" className="nav-link">
-                Estimates
+                New Customers
               </Link>
             </li>
             <li className="nav-item">
