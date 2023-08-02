@@ -1,7 +1,4 @@
 import { Route, Routes } from 'react-router-dom'
-import axios from 'axios'
-import { useState, useEffect } from 'react'
-import { useParams, Link } from 'react-router-dom'
 import Customers from './customers'
 import Employees from './employees'
 import Estimates from './estimates'
