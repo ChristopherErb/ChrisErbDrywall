@@ -12,10 +12,14 @@ const Customers = (props) => {
 
   useEffect(() => {
     //UPDATE
-    axios.get(`https://famous-maamoul-915df2.netlify.app/customers/`).then((response) => {
+    axios.get("https://famous-maamoul-915df2.netlify.app/customers/")
+    .then((response) => {
       setCustomers(response.data);
+    })
+    .catch((error) => {
+      console.error("error fetching customers", error);
     });
-  }, []);
+}, []);
 
   const handleEdit = (customer) => {
     setEditCustomer(customer);
