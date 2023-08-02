@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://famous-maamoul-915df2.netlify.app/'
+export const BASE_URL = 'https://famous-maamoul-915df2.netlify.app'
