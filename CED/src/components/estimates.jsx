@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "./navbar";
+import { BASE_URL } from "../globals";
 
 const Estimates = () => {
   const initialState = {
@@ -21,7 +22,7 @@ const Estimates = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     axios
-      .post('https://famous-maamoul-915df2.netlify.app/customers/', formState)
+      .post(`${BASE_URL}/customers/`, formState)
       .then((response) => {
         console.log("cstmr created", response.data);
         setFormState(initialState)
