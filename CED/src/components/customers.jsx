@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import NavBar from "./navbar";
+import { BASE_URL } from '../globals';
 
 const Customers = (props) => {
   const { customerId } = useParams();
@@ -12,7 +13,7 @@ const Customers = (props) => {
 
   useEffect(() => {
     //UPDATE
-    axios.get("https://famous-maamoul-915df2.netlify.app/customers/")
+    axios.get(`${BASE_URL}/customers`)
     .then((response) => {
       setCustomers(response.data);
     })
@@ -30,7 +31,7 @@ const Customers = (props) => {
 
   const handleUpdate = () => {
     axios
-      .put(`https://famous-maamoul-915df2.netlify.app/customers/${EditCustomer.id}`, EditCustomer)
+      .put(`${BASE_URL}/customers/${EditCustomer.id}`, EditCustomer)
       .then((response) => {
         console.log("Customer updated", response.data);
         setCustomers((prevCustomers) =>
@@ -48,11 +49,13 @@ const Customers = (props) => {
       });
   };
 
+
+  console.log(props)
   //DELETE
   const handleDelete = (customerId) => {
     console.log(props.customers);
     axios
-      .delete(`https://famous-maamoul-915df2.netlify.app/customers/${customerId}`)
+      .delete(`${BASE_URL}/customers/${customerId}`)
       .then((response) => {
         console.log("deleted", response.data);
         window.location.reload();
