@@ -74,7 +74,7 @@ const Estimates = () => {
           />
         </div>
         <div className="input-container">
-          <label htmlFor="price_sqft">Price per sqft:</label>
+          <label htmlFor="price_sqft">Timeframe</label>
           <input
             type="text"
             id="price_sqft"
