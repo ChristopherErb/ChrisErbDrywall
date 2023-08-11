@@ -11,7 +11,7 @@ const Contact = () => {
       </header>
 
       <h4 className="">
-        Looking for some drywall work? Here's how you can find Scott!
+        Find Scott Erb Drywall here!
       </h4>
       <div className="iconFloat main-content">
         <div className="notAnnoyed">
@@ -34,7 +34,7 @@ const Contact = () => {
         </div>
       </div>
       <h4 className="">
-        I always love to hear website feedback! Here you can find Christopher
+        Website feedback or suggestions to Christopher:
       </h4>
       <div className="iconFloat main-content">
         <div className="notAnnoyed">

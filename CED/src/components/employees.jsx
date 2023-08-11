@@ -19,9 +19,8 @@ const Employees = (props) => {
             </h3>
             <img src={employee.employee_picture}></img>
             <h5>
-              What can they do? {employee.skill_level} <br />
-              Hourly fee: {employee.employee_pay} <br />
-              How long have I been finishing? {employee.years_of_experience}
+              Skill Level: {employee.skill_level} <br />
+              Years Finishing: {employee.years_of_experience}
             </h5>
           </div>
         ))}
