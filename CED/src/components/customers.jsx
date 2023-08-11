@@ -138,7 +138,7 @@ const Customers = (props) => {
                     Contact Information: {customer.address}
                   </p>
                   <p className="card-text">
-                    Offered price per square foot: {customer.price_sqft}
+                    Availability: {customer.price_sqft}
                   </p>
                 </>
               )}
